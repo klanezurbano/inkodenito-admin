@@ -19,6 +19,7 @@ class RecipeSeeder extends Seeder
         foreach (range(1,20) as $recipeIndex) {
             DB::table('recipes')->insert([
                 'title' => $faker->text(20),
+                'image_url' => $faker->imageUrl(640, 480, 'animals', true),
                 'description' => $faker->text(100),
                 'prep_time' => $faker->numberBetween(15, 120),
                 'cooking_time' => $faker->numberBetween(60, 480),

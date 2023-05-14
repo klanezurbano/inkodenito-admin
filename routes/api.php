@@ -34,3 +34,4 @@ Route::delete('/user/{user_id}', [UserController::class, 'delete']);
 
 // Recipe Routes
 Route::get('/recipe/{recipe_id}/user', [RecipeController::class, 'getRecipeAuthor']);
+Route::middleware('auth:sanctum')->post('/recipe', [RecipeController::class, 'store']);
